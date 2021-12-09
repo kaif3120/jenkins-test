@@ -1,20 +1,25 @@
 package com.jenkins.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-@Entity
+
 public class Accounts {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+  
     private int id;
     private String username;
     private String password;
 
-    @Override
+  
+    public Accounts(){
+        
+    }
+    
+
+    public Accounts(int id, String username, String password) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+    }
     public String toString() {
         return "Accounts [id=" + id + ", password=" + password + ", username=" + username + "]";
     }

@@ -5,34 +5,35 @@ import java.util.List;
 
 
 import com.jenkins.entities.Accounts;
-import com.jenkins.repository.AccountsRep;
+import com.jenkins.fakeService.AccountsService;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 
 
 
 @RestController
 public class AccountController {
-    
-    @Autowired
-    private AccountsRep accountsRep;
 
+    @Autowired
+    private AccountsService accountsService;
+    
 
     @GetMapping("/account")
     public List<Accounts> getAccounts(){
-        return this.accountsRep.findAll();
+        return accountsService.findAll();
     } 
 
     @PostMapping(value="/account")
     public Accounts addAccounts(@RequestBody Accounts account) {
         System.out.println(account);
-        return this.accountsRep.save(account);
+        return this.accountsService.save(account);
     }
     
 
