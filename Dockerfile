@@ -1,4 +1,4 @@
 FROM openjdk:11
-ADD target/docker-sb-mysql.jar docker-sb-mysql.jar
-EXPOSE  9090
-ENTRYPOINT [ "java" , "-jar" , "docker-sb-mysql.jar" ]
+ADD target/jenkins-sb-docker.jar jenkins-sb-docker.jar
+EXPOSE  8080
+ENTRYPOINT [ "java" , "-jar" , "jenkins-sb-docker.jar" ]
