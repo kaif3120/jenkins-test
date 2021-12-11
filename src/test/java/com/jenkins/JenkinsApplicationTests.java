@@ -12,7 +12,7 @@ class JenkinsApplicationTests {
 
 	 @Test
 	 void test1() {
-       assertEquals(true ,2+2 == 4);
+       assertEquals(true ,1+3 == 4);
 	}
 	 @Test
 	 void test2() {
