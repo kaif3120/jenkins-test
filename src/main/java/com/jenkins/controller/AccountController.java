@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 
 
 
@@ -26,7 +26,6 @@ public class AccountController {
     @Autowired
     private AccountsService accountsService;
     
-
     @GetMapping("/account")
     public List<Accounts> getAccounts(){
         return accountsService.findAll();
@@ -38,5 +37,4 @@ public class AccountController {
         return this.accountsService.save(account);
     }
     
-
 }
